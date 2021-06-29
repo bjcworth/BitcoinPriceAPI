@@ -6,10 +6,10 @@
 
 ### `dotnet build BitcoinPriceAPI.sln --configuration Release`
 
-## Upon successful build, run the following to change directory
+## Upon successful build, run the following to change directory to the Release:
 
 ### `cd bin\Release\.net5.0`
 
-## Run the following to launch the app on localhost
+## Run the following to launch the app on localhost:
 
 ### `dotnet BitcoinPriceAPI.dll`
