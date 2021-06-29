@@ -1,6 +1,6 @@
 # Getting Started with BitcoinPriceAPI
 
-***These instructions require .NET SDK 5.0 or later installed to work***
+***These instructions require .NET SDK 5.0 or later installed***
 
 ## In the project directory, run the following:
 
