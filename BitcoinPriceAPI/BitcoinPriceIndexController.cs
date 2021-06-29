@@ -18,13 +18,6 @@ namespace BitcoinPriceAPI.Controllers
     {
         private static readonly BitcoinPriceIndex _prices;
 
-        private readonly ILogger<BitcoinPriceIndexController> _logger;
-
-
-        public BitcoinPriceIndexController(ILogger<BitcoinPriceIndexController> logger)
-        {
-            _logger = logger;
-        }
         static BitcoinPriceIndexController()
         {
             _prices = new BitcoinPriceIndex { };
@@ -42,7 +35,7 @@ namespace BitcoinPriceAPI.Controllers
             _prices.GBP = PricesObject["bpi"]["GBP"]["rate"].ToString();
             _prices.EUR = PricesObject["bpi"]["EUR"]["rate"].ToString();
             _prices.LastUpdated = PricesObject["time"]["updated"].ToString();
-
+            _prices.Disclaimer = PricesObject["disclaimer"].ToString();
 
             return (_prices);
         }
