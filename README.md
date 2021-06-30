@@ -2,18 +2,20 @@
 
 ***These instructions require ASP.NET Core 5.0 Runtime or later installed!***
 
-## 1) In the project directory, run:
+https://dotnet.microsoft.com/download/dotnet/5.0
 
-### `dotnet run BitcoinPriceAPI.csproj --configuration Debug --urls"http://localhost:44386"`
+## In the project directory, run:
 
-![image](https://user-images.githubusercontent.com/6896827/123973180-8b8db900-d989-11eb-9d76-c2987a5ff98f.png)
+### `dotnet run BitcoinPriceAPI.csproj --configuration Debug --urls "http://localhost:44386"`
 
-## 2)  Data will be hosted at this endpoint:
+![image](https://user-images.githubusercontent.com/6896827/123974687-ce9c5c00-d98a-11eb-8d33-95ad69457522.png)
+
+## Data will be hosted at this endpoint:
 
 ### https://localhost:44386/api/BitcoinPriceIndex
 
 ![image](https://user-images.githubusercontent.com/6896827/123973727-02c34d00-d98a-11eb-8cd3-3ec25864c1c1.png)
 
-## 3) That's it!
+## That's it!
 
-***The terminal window should remain open for the remainder of the API session***
+***The terminal window should remain open for the remainder of the API session!***
