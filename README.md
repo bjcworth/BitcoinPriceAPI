@@ -6,9 +6,9 @@ https://dotnet.microsoft.com/download/dotnet/5.0
 
 ## In the project directory, run:
 
-### `dotnet run BitcoinPriceAPI.csproj --configuration Debug --urls "http://localhost:44386"`
+### `dotnet run BitcoinPriceAPI`
 
-![image](https://user-images.githubusercontent.com/6896827/123974687-ce9c5c00-d98a-11eb-8d33-95ad69457522.png)
+![image](https://user-images.githubusercontent.com/6896827/123979095-6a7b9700-d98e-11eb-9a4d-9ae0850b2b60.png)
 
 ## Data will be hosted at this endpoint:
 
