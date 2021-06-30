@@ -4,7 +4,7 @@
 
 ## 1) In the project directory, run:
 
-### `dotnet build BitcoinPriceAPI.sln --configuration Release`
+### `dotnet build BitcoinPriceAPI.csproj --configuration Release`
 
 ## 2) Upon successful build, the app can be run via:
 
