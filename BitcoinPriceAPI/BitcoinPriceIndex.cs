@@ -12,7 +12,6 @@ namespace BitcoinPriceAPI
         public string GBP { get; set; }
         public string EUR { get; set; }
         public string LastUpdated { get; set; } 
-
         public string Disclaimer { get; set; }
     }
 }
