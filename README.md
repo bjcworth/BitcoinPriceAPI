@@ -1,26 +1,19 @@
 # Getting Started with BitcoinPriceAPI
 
-***These instructions require .NET SDK 5.0 or later installed!***
+***These instructions require ASP.NET Core 5.0 Runtime or later installed!***
 
 ## 1) In the project directory, run:
 
-### `dotnet build BitcoinPriceAPI.csproj --configuration Release`
+### `dotnet run BitcoinPriceAPI.csproj --configuration Debug --urls"http://localhost:44386"`
 
-## 2) Upon successful build, the app can be run via:
+![image](https://user-images.githubusercontent.com/6896827/123973180-8b8db900-d989-11eb-9d76-c2987a5ff98f.png)
 
-### `cd bin\Release\net5.0`
-### `dotnet BitcoinPriceAPI.dll`
+## 2)  Data will be hosted at this endpoint:
 
-***Alternatively, you can launch BitcoinPriceAPI.exe from the bin\Release\net5.0 folder***
+### https://localhost:44386/api/BitcoinPriceIndex
 
-![image](https://user-images.githubusercontent.com/6896827/123888290-2d2cf000-d921-11eb-8c14-4b213e3a86c2.png)
+![image](https://user-images.githubusercontent.com/6896827/123973727-02c34d00-d98a-11eb-8cd3-3ec25864c1c1.png)
 
-## 3)  Data will be hosted at this endpoint:
-
-### https://localhost:5001/api/BitcoinPriceIndex
-
-![image](https://user-images.githubusercontent.com/6896827/123888004-92341600-d920-11eb-8c41-131b30c45c09.png)
-
-## 4) That's it!
+## 3) That's it!
 
 ***The terminal window should remain open for the remainder of the API session***
