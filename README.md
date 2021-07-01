@@ -14,7 +14,7 @@ https://dotnet.microsoft.com/download/dotnet/5.0
 
 ### https://localhost:44386/swagger/index.html
 
-![image](https://user-images.githubusercontent.com/6896827/124059580-4ef9a600-d9f9-11eb-9c67-63034f6be646.png)
+![image](https://user-images.githubusercontent.com/6896827/124059822-bfa0c280-d9f9-11eb-8724-8723939db858.png)
 
 
 ## Data will be hosted at this endpoint:
