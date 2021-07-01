@@ -27,4 +27,6 @@ https://dotnet.microsoft.com/download/dotnet/5.0
 
 ***The terminal window should remain open for the remainder of the API session! If you run into an SSL error running locally, please enable this localhost flag in Chrome:***
 
+### chrome://flags/#allow-insecure-localhost
+
 ![image](https://user-images.githubusercontent.com/6896827/124059280-d5fa4e80-d9f8-11eb-8934-4bc92a8f6749.png)
