@@ -1,15 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Text.Json;
-
 using System.Net.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace BitcoinPriceAPI.Controllers
 {
@@ -18,10 +11,12 @@ namespace BitcoinPriceAPI.Controllers
     public class BitcoinPriceIndexController : ControllerBase
     {
         private static BitcoinPriceIndex _prices;
+        private static IConfiguration Configuration;
 
-        static BitcoinPriceIndexController()
+        public BitcoinPriceIndexController(IConfiguration configuration)
         {
             _prices = new BitcoinPriceIndex { };
+            Configuration = configuration;
 
         }
 
@@ -30,7 +25,7 @@ namespace BitcoinPriceAPI.Controllers
         {
             HttpClient client = new HttpClient();
 
-            string url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+            string url = Configuration["CoinDeskApiUrl"];
 
             using (HttpResponseMessage response = await client.GetAsync(url))
             {
