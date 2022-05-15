@@ -7,8 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.IO;
-using System.Net;
+using System.Text.Json;
+
+using System.Net.Http;
 
 namespace BitcoinPriceAPI.Controllers
 {
@@ -16,7 +17,7 @@ namespace BitcoinPriceAPI.Controllers
     [ApiController]
     public class BitcoinPriceIndexController : ControllerBase
     {
-        private static readonly BitcoinPriceIndex _prices;
+        private static BitcoinPriceIndex _prices;
 
         static BitcoinPriceIndexController()
         {
@@ -25,19 +26,31 @@ namespace BitcoinPriceAPI.Controllers
         }
 
         [HttpGet]
-        public BitcoinPriceIndex GetPrices()
+        public async Task<BitcoinPriceIndex> GetPricesAsync()
         {
-            WebClient Client = new WebClient();
-            string PricesString = Client.DownloadString("https://api.coindesk.com/v1/bpi/currentprice.json");
-            JObject PricesObject = JObject.Parse(PricesString);
+            HttpClient client = new HttpClient();
 
-            _prices.USD = PricesObject["bpi"]["USD"]["rate"].ToString();
-            _prices.GBP = PricesObject["bpi"]["GBP"]["rate"].ToString();
-            _prices.EUR = PricesObject["bpi"]["EUR"]["rate"].ToString();
-            _prices.LastUpdated = PricesObject["time"]["updated"].ToString();
-            _prices.Disclaimer = PricesObject["disclaimer"].ToString();
+            string url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
-            return (_prices);
+            string pricesString = "";
+
+
+            using (HttpResponseMessage response = await client.GetAsync(url))
+            {
+                using(HttpContent content = response.Content)
+                {
+                    pricesString = await content.ReadAsStringAsync();
+
+                    JObject pricesJson = JObject.Parse(pricesString);
+
+                    _prices.USD = pricesJson["bpi"]["USD"]["rate"].ToString();
+                    _prices.GBP = pricesJson["bpi"]["GBP"]["rate"].ToString();
+                    _prices.EUR = pricesJson["bpi"]["EUR"]["rate"].ToString();
+                    _prices.LastUpdated = pricesJson["time"]["updated"].ToString();
+                    _prices.Disclaimer = pricesJson["disclaimer"].ToString();
+                } 
+            } 
+            return _prices;
         }
     }
 }
