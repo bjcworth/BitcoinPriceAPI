@@ -32,23 +32,19 @@ namespace BitcoinPriceAPI.Controllers
 
             string url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
-            string pricesString = "";
-
-
             using (HttpResponseMessage response = await client.GetAsync(url))
             {
-                using(HttpContent content = response.Content)
-                {
-                    pricesString = await content.ReadAsStringAsync();
+                using HttpContent content = response.Content;
 
-                    JObject pricesJson = JObject.Parse(pricesString);
+                string pricesString = await content.ReadAsStringAsync();
 
-                    _prices.USD = pricesJson["bpi"]["USD"]["rate"].ToString();
-                    _prices.GBP = pricesJson["bpi"]["GBP"]["rate"].ToString();
-                    _prices.EUR = pricesJson["bpi"]["EUR"]["rate"].ToString();
-                    _prices.LastUpdated = pricesJson["time"]["updated"].ToString();
-                    _prices.Disclaimer = pricesJson["disclaimer"].ToString();
-                } 
+                JObject pricesJson = JObject.Parse(pricesString);
+
+                _prices.USD = pricesJson["bpi"]["USD"]["rate"].ToString();
+                _prices.GBP = pricesJson["bpi"]["GBP"]["rate"].ToString();
+                _prices.EUR = pricesJson["bpi"]["EUR"]["rate"].ToString();
+                _prices.LastUpdated = pricesJson["time"]["updated"].ToString();
+                _prices.Disclaimer = pricesJson["disclaimer"].ToString();
             } 
             return _prices;
         }
