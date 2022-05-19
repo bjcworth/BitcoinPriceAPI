@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BitcoinPriceAPI
+namespace BitcoinPriceAPI.Model
 {
     public class BitcoinPriceIndex
     {
@@ -11,7 +11,7 @@ namespace BitcoinPriceAPI
         public string USD { get; set; }
         public string GBP { get; set; }
         public string EUR { get; set; }
-        public string LastUpdated { get; set; } 
+        public string LastUpdated { get; set; }
         public string Disclaimer { get; set; }
     }
 }
