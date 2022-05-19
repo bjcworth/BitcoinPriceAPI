@@ -1,6 +1,6 @@
 # Getting Started with BitcoinPriceAPI
 
-***These instructions require ASP.NET Core 5.0 Runtime or later installed!***
+***These instructions require ASP.NET Core 6.0 Runtime or later installed!***
 
 https://dotnet.microsoft.com/download/dotnet/5.0
 
