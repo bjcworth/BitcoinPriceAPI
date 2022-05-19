@@ -2,7 +2,7 @@
 
 ***These instructions require ASP.NET Core 6.0 Runtime or later installed!***
 
-https://dotnet.microsoft.com/download/dotnet/5.0
+https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
 ## In the project directory, run:
 
